@@ -54,12 +54,23 @@ with open(file_to_load) as election_data:
         #Initialize the candidate voye count = 0
         candidate_votes[candidate_name] += 1
 
-    #Print the total votes
-    #print(total_votes)
-    # Print the candidate name
-    #print(candidate_options)
-    # Print the candidate votes
-    print(candidate_votes)
+# Save the results to our text file.
+with open(file_to_save, "w") as text_file:    
+
+    # Save the results to our text file.
+    election_results = (
+        f"Election Results \n"
+        f"----------------------- \n"
+        f"Total votes: {total_votes:,} \n"
+        f"----------------------- \n"
+        f"\nVotes for each Candidate \n"
+        f"---------------------------------------- \n"
+    )
+    print(election_results, end="")
+
+    # After printing the final vote count to the terminal save the final vote count to the text file.
+    text_file.write(election_results)
+
 
     # Determine the percentage of votes by each candidate
     # interate through the candidate list
@@ -73,6 +84,13 @@ with open(file_to_load) as election_data:
 
         #print the percenatge of votes recieved by the candidates
         print(f"{candidate_name}: recieved {vote_percentage:.2f}% of votes")
+        
+        candidate_results = (
+            f"{candidate_name} : {vote_percentage:.1f}% ({votes:,})\n"
+        )
+
+        # Save the winning candidate's results to the text file.
+        text_file.write(candidate_results)
 
         # Winning Candidate and Winning Count Tracker
         if (votes > winning_count) and (vote_percentage > winning_percentage) :
@@ -85,13 +103,18 @@ with open(file_to_load) as election_data:
 
     # Winning candidate summary
     winning_summary = (
-        f"---------------------------------\n"
+        f"\n---------------------------------\n"
+        f" **** WINNING SUMMARY **** \n"
         f"Winner: {winning_candidate} \n"
         f"Winning vote count : {winning_count} \n"
         f"Winning vote percentage : {winning_percentage:.1f}% \n"
         f"---------------------------------\n"
     )
     print(winning_summary)
+    
+    # Save the winning candidate's results to the text file.
+    text_file.write(winning_summary)
+    
 
 
     
