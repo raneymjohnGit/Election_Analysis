@@ -115,6 +115,6 @@ with open(file_to_save, "w") as text_file:
     # Save the winning candidate's results to the text file.
     text_file.write(winning_summary)
     
-
+# End of program
 
     
