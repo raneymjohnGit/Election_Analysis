@@ -76,8 +76,8 @@ The analysis of the election show that:
 - The winnner of the election was:
   - Diana DeGette, who received 73.8% of vote and 272,892 number of votes.
 
-## Challenge Summary
+## Election Audit Summary
 This python script can be reused with minor changes for any election audits provided the structure of the election data is in csv format is not changed.
 The following tweaks may needs to be done inorder to reuse the program
-    - Tweak for the csv file name and path of the file 
-    - Tweak may be required if the column number for the candidate name or county name is changed.
+  - Tweak for the csv file name and path of the file 
+  - Tweak may be required if the column number for the candidate name or county name is changed.
